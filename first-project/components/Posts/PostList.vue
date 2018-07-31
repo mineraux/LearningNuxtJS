@@ -1,24 +1,12 @@
 <template>
     <section class="post-list">
         <PostPreview 
-          id="1" 
-          thumbnail="https://cdn-images-1.medium.com/max/1600/1*dKYx6tc_nT6hELIz9_pExg.png" 
-          title="Hello Nuxt !" 
-          previewText="Nice framework tho" 
-          :is-admin="isAdmin"
-        />
-        <PostPreview 
-          id="2" 
-          thumbnail="https://cdn-images-1.medium.com/max/1600/1*dKYx6tc_nT6hELIz9_pExg.png" 
-          title="Nuxt still insane !" 
-          previewText="Can't believe that ..." 
-          :is-admin="isAdmin"
-        />
-        <PostPreview 
-          id="3" 
-          thumbnail="https://cdn-images-1.medium.com/max/1600/1*dKYx6tc_nT6hELIz9_pExg.png" 
-          title="Well, thank you for nuxt !" 
-          previewText="Nice nuxtjs component" 
+          v-for="post in posts"
+          :key="post.id"
+          :id="post.id" 
+          :thumbnail="post.thumbnail" 
+          :title="post.title" 
+          :previewText="post.previewText" 
           :is-admin="isAdmin"
         />
     </section>
@@ -26,6 +14,7 @@
 
 <script>
 import PostPreview from '@/components/Posts/PostPreview'
+
 export default {
   components: {
     PostPreview
@@ -34,6 +23,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }
