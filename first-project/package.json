@@ -1,0 +1,19 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "My super-excellent Nuxt.js project",
+  "author": "Robin",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
