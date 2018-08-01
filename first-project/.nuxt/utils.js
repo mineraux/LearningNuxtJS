@@ -120,7 +120,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {}
+      env: {"baseUrl":"https://nuxtjs-course-bed4c.firebaseio.com"}
     }
     // Only set once
     if (context.req) app.context.req = context.req
