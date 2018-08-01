@@ -13,6 +13,7 @@ export default {
     components: {
         AdminPostForm
     },
+    middleware: ['check-auth', 'auth'],
     layout:'admin',
     asyncData(context) {
         return context.app.$axios.$get(process.env.baseUrl + 'posts/' + context.params.postId + '.json')
