@@ -16,7 +16,7 @@ export default {
     middleware: ['check-auth', 'auth'],
     layout:'admin',
     asyncData(context) {
-        return context.app.$axios.$get(process.env.baseUrl + 'posts/' + context.params.postId + '.json')
+        return context.app.$axios.$get('posts/' + context.params.postId + '.json')
             .then(data => {
                 return {
                     loadedPost: {...data, id: context.params.postId}
